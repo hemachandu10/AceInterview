@@ -2,12 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import axios from "axios";
 
-function ResumeUpload() {
-    const [file, setFile] = useState(null);
 
+function ResumeUpload({setDashReload}) {
+
+    const [file, setFile] = useState(null);
+    const [loading, setLoading] = useState(false);
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         if (!file) {
             alert("Please select a file");
             return;
@@ -16,7 +18,7 @@ function ResumeUpload() {
         const formData = new FormData();
 
         formData.append("resume", file);
-
+        setLoading(true);
         try {
             const token = localStorage.getItem("token");
             const res1 = await axios.post(
@@ -38,18 +40,24 @@ function ResumeUpload() {
                 }
             );
             console.log("skills extraction successful");
-            console.log(res2.data)
+            //localStorage.setItem("interviewData",true);
+            setDashReload((preData)=>{
+                return true
+            })
+            localStorage.setItem("newUploadDone",true)
+            setLoading(false);
           
 
         } catch (err) {
             console.log(err);
+            setLoading(false);
         }
 
     };
 
     return (
         <>
-            <div className="upload-box">
+            <div className="upload-box mt-5 pt-5 mb-5 text-center">
                 <div className="container">
                     <form onSubmit={handleSubmit} action="http://localhost:8080/api/resumeUpload" method="post" encType="multipart/form-data">
                         <input
@@ -57,7 +65,18 @@ function ResumeUpload() {
                             accept=".pdf"
                             onChange={(e) => setFile(e.target.files[0])}
                         />
-                        <button type='submit'>Upload</button>
+                        {
+                            loading 
+                            && 
+                            <div className="loading my-4 text-center">
+                                <p>Uploading...</p>
+                            </div>
+                        }
+                        {   
+                            !loading 
+                            && 
+                            <button type='submit' className="btn btn-primary mx-2">Upload</button>                            
+                        }
                     </form>
                 </div>
             </div>

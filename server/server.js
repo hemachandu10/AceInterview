@@ -1,7 +1,8 @@
 require('dotenv').config()
-const UserRoutes=require('./routers/authentication')
-const ResumeUpload=require('./routers/resumeUpload')
+const UserRoutesRouter=require('./routers/authentication')
+const ResumeUploadRouter=require('./routers/resumeUpload')
 const GroqaiRouter=require('./routers/groqai')
+const interviewRouter=require('./routers/interview')
 // const groq=require('./config/groq')
 // console.log(process.env.GROQ_API_KEY)
 // console.log(groq)
@@ -19,9 +20,10 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("heiii")
 })
-app.use("/api/auth",UserRoutes);
-app.use("/api/resumeUpload",ResumeUpload)
+app.use("/api/auth",UserRoutesRouter);
+app.use("/api/resumeUpload",ResumeUploadRouter)
 app.use('/api/ai/analysis',GroqaiRouter)
+app.use('/api/interview',interviewRouter)
 
 PORT=process.env.PORT || 8080;
 app.listen(PORT,()=>{

@@ -1,0 +1,76 @@
+:root{
+  --navbar:#0F172A;
+  --footer:#020617;
+
+  --background:#F8FAFC;
+  --card:#FFFFFF;
+
+  --primary:#2563EB;
+  --primary-hover:#1D4ED8;
+
+  --heading:#0F172A;
+  --text:#475569;
+  --muted:#94A3B8;
+
+  --border:#E2E8F0;
+
+  --success:#22C55E;
+  --warning:#F59E0B;
+  --danger:#EF4444;
+}
+
+body{
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+}
+
+.navbar{
+    background-color: var(--navbar)  !important;
+    color: white  !important;
+}
+
+.footer{
+    background-color: var(--footer);
+    color: white;
+}
+
+.card{
+    background-color: var(--card);
+    border: 1px solid var(--border);
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: var(--heading);
+}
+
+button{
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+button:hover{
+    background-color: var(--primary-hover);
+}
+
+.nav-text{
+  text-decoration: none !important;
+  color: white !important;
+}
+.content-1{
+  font-size: 1.5rem;
+}
+.content-2{
+  font-size: 1.1rem;
+}
+.nav-auth{
+  text-decoration: none !important;
+  
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

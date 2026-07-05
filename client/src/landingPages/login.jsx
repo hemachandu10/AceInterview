@@ -21,10 +21,10 @@ function Login() {
     }
     async function handleSubmit(event) {
         event.preventDefault()
-        console.log(formData)
+        //console.log(formData)
         try {
             let result = await axios.post("http://localhost:8080/api/auth/login", formData);
-            console.log(result)
+            //console.log(result)
             if (result.data.token) {
                 localStorage.setItem("token", result.data.token);
                 navigate("/dashboard");
