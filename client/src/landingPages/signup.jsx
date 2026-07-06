@@ -25,7 +25,7 @@ function SignUp() {
         event.preventDefault()
         //console.log(formData)
         try {
-            let result = await axios.post("http://localhost:8080/api/auth/register", formData);
+            let result = await axios.post("https://aceinterview-ce2c.onrender.com/api/auth/register", formData);
             //console.log(result)
             //console.log(result.status)
             if (result.data.token) {

@@ -18,7 +18,7 @@ function Dashboard() {
     async function handleStart() {
         try {
             const result = await axios.get(
-                "http://localhost:8080/api/interview/getSession_id",
+                "https://aceinterview-ce2c.onrender.com/api/interview/getSession_id",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

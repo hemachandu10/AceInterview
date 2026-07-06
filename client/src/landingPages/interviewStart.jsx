@@ -15,7 +15,7 @@ function InterviewStart() {
    
     async function getQuestion() {
         let result=await axios.post(
-            "http://localhost:8080/api/interview/start",
+            "https://aceinterview-ce2c.onrender.com/api/interview/start",
             {
                 sessionId:sessionId,
                 questionNumber: Number(currQuestion?.questionNumber ?? 0) + 1,
@@ -34,7 +34,7 @@ function InterviewStart() {
 
     async function pushAnswer() {
          let result=await axios.post(
-            "http://localhost:8080/api/interview/answer",
+            "https://aceinterview-ce2c.onrender.com/api/interview/answer",
             {
                 sessionId:sessionId,
                 questionNumber: Number(currQuestion?.questionNumber ?? 0),

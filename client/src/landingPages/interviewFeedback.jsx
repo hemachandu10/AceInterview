@@ -10,7 +10,7 @@ function InterviewFeedback() {
     async function getFeedback() {
         setLoading(true);
          let result=await axios.post(
-            "http://localhost:8080/api/interview/feedback",
+            "https://aceinterview-ce2c.onrender.com/api/interview/feedback",
             {
                 sessionId:sessionId,
             },

@@ -22,7 +22,7 @@ function ResumeUpload({setDashReload}) {
         try {
             const token = localStorage.getItem("token");
             const res1 = await axios.post(
-                "http://localhost:8080/api/resumeUpload/",
+                "https://aceinterview-ce2c.onrender.com/api/resumeUpload/",
                 formData,
                 {
                     headers: {
@@ -32,7 +32,7 @@ function ResumeUpload({setDashReload}) {
             );
             console.log("uploaded successful");
             const res2 = await axios.get(
-                "http://localhost:8080/api/ai/analysis",
+                "https://aceinterview-ce2c.onrender.com/api/ai/analysis",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -59,7 +59,7 @@ function ResumeUpload({setDashReload}) {
         <>
             <div className="upload-box mt-5 pt-5 mb-5 text-center">
                 <div className="container">
-                    <form onSubmit={handleSubmit} action="http://localhost:8080/api/resumeUpload" method="post" encType="multipart/form-data">
+                    <form onSubmit={handleSubmit} action="https://aceinterview-ce2c.onrender.com/api/resumeUpload" method="post" encType="multipart/form-data">
                         <input
                             type="file"
                             accept=".pdf"
