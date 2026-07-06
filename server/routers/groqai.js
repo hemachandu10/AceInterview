@@ -3,7 +3,7 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const InterviewAnalysis=require('../models/InterviewAnalysis')
 const authMiddleware = require("../middlewares/authMiddleware")
-const Resume = require('../models/Resume')
+const Resume = require('../models/resume')
 const GroqService=require('../services/groqService')
 const Message=require("../promt/resumeAnalyse")
 
