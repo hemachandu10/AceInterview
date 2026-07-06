@@ -92,7 +92,7 @@ function InterviewStart() {
         return (
             <>
                 <div className="container text-center mt-5 pt-5">
-                    <h3 className="mb-5">Interview Ended. what to reTest?</h3>
+                    <h3 className="mb-5">Interview Ended. what to take reTest?</h3>
                     <button onClick={reTest} className="btn btn-primary">
                         take retest
                     </button>
